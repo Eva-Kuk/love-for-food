@@ -9,54 +9,12 @@
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="logo">
                             <figure>
-                                <a href="index.html" class="light-logo">
+                                <a href="{% url 'home' %}" class="light-logo">
                                     <img src="{% static 'logo/loveForFoodLogo.png' %}" alt="LoveForFoodLogo" width='220'>
                                 </a>
                             </figure>
-                        </div>
-                        <div class="main-nav">
-                                <nav id="site-navigation" class="main-navigation">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Demos</a>
-                                            <ul>
-                                                <li><a href="index.html">Food Bakery</a></li>
-                                                <li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
-                                                <li><a href="foodstop.html">Food Stop</a></li>
-                                                <li><a href="rtl.html">Rtl Demo</a></li>
-                                                <li><a href="food-cout.html">Food Court</a></li>
-                                                <li><a href="single-restaurant.html">Single Restaurant Demo</a></li>
-                                            </ul>
-                                            <!--End Sub Menu -->
-                                        </li>
-                                        <li><a href="listings.html">Restaurants</a></li>
-                                        <li>
-                                            <a href="#">Pages</a>
-                                            <ul>
-                                                <li><a href="price-plans.html">Price Plans</a></li>
-                                                <li><a href="how-it-works.html">How it works</a></li>
-                                                <li><a href="faq.html">FAQ’s</a></li>
-                                                <li><a href="404.html">404</a></li>
-                                                <li><a href="search-result.html">Search Result</a></li>
-                                                <li><a href="contact-us.html">Contact</a></li>
-                                            </ul>
-                                            <!--End Sub Menu -->
-                                        </li>
-                                        <li>
-                                            <a href="#">Blogs</a>
-                                            <ul>
-                                                <li><a href="blog-large.html">Blog Large</a></li>
-                                                <li><a href="blog-medium.html">Blog Medium</a></li>
-                                                <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                                <li><a href="blog-detail.html">Blog Detail Page</a></li>
-                                            </ul>
-                                            <!--End Sub Menu -->
-                                        </li>
-                                    </ul>
-                                </nav><!-- .main-navigation -->
-                            </div>
-                        
-                        <div class="main-location">
+                        </div> 
+                        <div class="main-location ml-5">
                             <ul>
                                 <li class="location-has-children choose-location">
                                     <form action="#">
@@ -70,7 +28,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="login-option">
-                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" data-toggle="modal" href="#user-register">Login / Register</a><a class="get-start-btn" href="register-restaurant.html">
+                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" data-toggle="modal" href="#user-register">Login</a> / 
+                                <span><a href="{% url 'registerUser' %}" class="cs-color cs-popup-joinus-btn login-popup ml-0">Register</a></span><a class="get-start-btn" href="register-restaurant.html">
                                 Register
                                 Restaurant </a>
                         </div>
