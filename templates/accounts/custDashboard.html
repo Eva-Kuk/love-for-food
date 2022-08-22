@@ -3,6 +3,7 @@
 {% block content %}
 
 <h4> Welcome {{ user.username }} </h4>
+<p>This is a {{ user.get_role }} </p>
 
 {% include 'includes/alerts.html' %}
 
