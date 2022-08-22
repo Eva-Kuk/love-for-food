@@ -1,0 +1,27 @@
+
+{% load static %}
+
+{% block content %}
+<!-- Hero images -->
+<div class="page-section nopadding cs-nomargin" style="background: url('../extra-images/403.png') no-repeat center / center;  background-size: cover;">
+    <div class="container-fluid overlay-background h-100">
+        <div class="row h-50  d-flex align-content-center">
+            <div class="col-12 text-center ">
+                <h2 class="header-font-error logo-font mt-5 mb-5">Forbidden</h2>
+            </div>
+        </div>
+        <div class="row text-center d-flex align-items-center h-50 text-error-position">
+            <div class="col-12 mt-2">
+                <h4>
+                    <p class="pt-3  text-error"><p> You are not authorised to view this page!</p></p>
+                    <p  class="pt-3 text-error"><i class="fas fa-hand-point-down"></i> 
+                        Let us take you back on track click the button bellow 
+                        <i class="fas fa-hand-point-down"></i>
+                    </p>
+                    <a href="{% url 'home' %}" class="btn btn-teal border-0 mt-2 px-3">Back to Shop!</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
