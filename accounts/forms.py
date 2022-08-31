@@ -20,6 +20,7 @@ class UserForm(forms.ModelForm):
             )
 
 class UserProfileForm(forms.ModelForm):
+    address = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Start typing...', 'required': 'required'}))
     profile_picture = forms.FileField(widget=forms.FileInput(attrs={'class': 'btn btn-info'}), validators=[allow_only_images_validator])
     cover_photo = forms.FileField(widget=forms.FileInput(attrs={'class': 'btn btn-info'}), validators=[allow_only_images_validator])
     
@@ -27,7 +28,7 @@ class UserProfileForm(forms.ModelForm):
     #longitude = forms.CharField(widget=forms.TextInput(attrs={'readonly': 'readonly'}))
     class Meta:
         model = UserProfile
-        fields = ['profile_picture', 'cover_photo', 'address_line_1', 'address_line_2', 'country', 'state', 'city', 'pin_code', 'latitude', 'longitude']
+        fields = ['profile_picture', 'cover_photo', 'address', 'country', 'state', 'city', 'pin_code', 'latitude', 'longitude']
     
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
