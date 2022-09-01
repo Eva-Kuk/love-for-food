@@ -153,4 +153,3 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL= 'loveForFood <webdeveloperevakukla@gmail.com>'
 
-GOOGLE_API_KEY = 'AIzaSyB2gCdSoextT8h4HZcx5RVwlOz5rcWFwqU'
