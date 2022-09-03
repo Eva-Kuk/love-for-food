@@ -17,10 +17,9 @@
                         <div class="user-holder">
                             <h5 class="text-uppercase">Build your food menu</h5>
                             <hr>
+                            <button class="btn btn-secondary" onclick="history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</button>
+                            <br><br>
                             <h6>Category: <span class="text-uppercase text-success">{{category}}</span></h6>
-                            <!--<a href="#" class="btn btn-success float-right m-1"><i class="fa fa-plus" aria-hidden="true"></i> Add Food</a>
-                            <a href="#" class="btn btn-info float-right m-1"><i class="fa fa-plus" aria-hidden="true"></i> Add Category</a>
-                            -->
                             {% if fooditems %}
                             <table class="table table-hover table-borderless">
                                 <tbody>
