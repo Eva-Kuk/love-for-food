@@ -30,7 +30,7 @@
                                         <small class="text-muted">{{cat.description}}</small></a>
                                     </td>
                                     <td class="text-right">
-                                        <i class="fa fa-edit" aria-hidden="true"></i> &nbsp;  &nbsp; &nbsp;
+                                        <a href="{% url 'edit_category' cat.id %}" style="color:unset;"><i class="fa fa-edit" aria-hidden="true"></i></a> &nbsp;  &nbsp; &nbsp;
                                         <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                                     </td>
                                   </tr>
