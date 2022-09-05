@@ -31,13 +31,14 @@
                                     </td>
                                     <td class="text-right">
                                         <a href="{% url 'edit_category' cat.id %}" style="color:unset;"><i class="fa fa-edit" aria-hidden="true"></i></a> &nbsp;  &nbsp; &nbsp;
-                                        <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                                        <a href="{% url 'delete_category' cat.id %}" onclick="return confirm('Are you sure you want to delete this category?')"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>
                                     </td>
                                   </tr>
                                 {% endfor %}
                                 </tbody>
                               </table>
                             
+
                         </div>
                     </div>
                 </div>

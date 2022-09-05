@@ -110,3 +110,10 @@ def edit_category(request, pk=None):
         'category': category,
     }
     return render(request,'vendor/edit_category.html', context)
+
+def delete_category(request, pk=None):
+    category = get_object_or_404(Category, pk=pk)
+    category.delete()
+    messages.success(request, 'Category has been deleted successfully!')
+    return redirect('menu_builder')
+    
