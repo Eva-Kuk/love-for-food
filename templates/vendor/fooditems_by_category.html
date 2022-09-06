@@ -26,13 +26,13 @@
                                 {% for food in fooditems %}
                                   <tr>
                                     <td class="text-left">{{ forloop.counter }}</td>
-                                    <td class="text-left"><img src="{{food.image.url}}" alt="Food Image" width="40">
+                                    <td class="text-left"><img src="{{food.image.url}}" alt="Food Image" width="60">
                                     <td class="text-left">
                                         <a href=""><p class="mb-0 font-weight-bold">{{ food }}</p>
                                         <small class="text-muted">{{food.description}}</small></a>
                                     </td>
                                     <td class="text-right">
-                                        <i class="fa fa-edit" aria-hidden="true"></i> &nbsp;  &nbsp; &nbsp;
+                                        <a href="{% url 'edit_food' food.id %}" style="color:unset;"><i class="fa fa-edit" aria-hidden="true"></i></a> &nbsp;  &nbsp; &nbsp;
                                         <i class="fa fa-trash text-danger" aria-hidden="true"></i>
                                     </td>
                                   </tr>
