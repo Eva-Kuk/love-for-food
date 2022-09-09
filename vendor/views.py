@@ -142,7 +142,7 @@ def add_food(request):
             print(form.errors)
     else:
         form = FoodItemForm()
-        # modify this form
+        # to display categories which belongs to logged in user
         form.fields['category'].queryset = Category.objects.filter(vendor=get_vendor(request))
     context = {
         'form': form,
@@ -168,6 +168,8 @@ def edit_food(request, pk=None):
             print(form.errors)
     else:
         form = FoodItemForm(instance=food)
+        # to display categories which belongs to logged in user
+        form.fields['category'].queryset = Category.objects.filter(vendor=get_vendor(request))
     context = {
         'form': form,
         'food': food,
