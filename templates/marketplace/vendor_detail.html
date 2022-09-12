@@ -25,6 +25,12 @@
                             </div>
                             <div class="text-holder">
                                 <span class="restaurant-title">{{ vendor.vendor_name }}</span>
+                                <div class="text">
+                                    {% if vendor.user_profile.address %}
+                                    <i class="icon-location"></i>
+                                    <p>{{vendor.user_profile.address }}</p>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                         <div class="delivery-timing reviews-sortby"> 
@@ -66,16 +72,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 sticky-sidebar">
-                    <div class="filter-toggle">
-                        <span class="filter-toggle-text">Categories By</span><i class="icon-chevron-down"></i>
-                    </div>
                     <div class="filter-wrapper">
                         <div class="categories-menu">
                             <h6><i class="icon-restaurant_menu"></i>Categories</h6>
                             <ul class="menu-list">
-                                <li class="active"><a href="#" class="menu-category-link"> Pizzas </a></li>
-                                <li class=""><a href="#" class="menu-category-link"> Garlic Bread </a></li>
-                                <li class=""><a href="#" class="menu-category-link"> Kebabs </a></li>
+                                {% for category in categories %}
+                                <li class="active"><a href="#" class="menu-category-link"> {{ category }} </a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -88,41 +91,31 @@
                         <div class="tab-content">
                             <div id="home" class="tab-pane in active">
                                 <div class="menu-itam-holder">                       
-                                    <div id="menu-item-list-6272" class="menu-itam-list">                
+                                    <div id="menu-item-list-6272" class="menu-itam-list">
+                                        <!-- category name --> 
+                                        {% for category in categories %}              
                                         <div class="element-title" id="menu-category-2">
-                                            <h5 class="text-color">Garlic Bread</h5>
-                                            <span>Garlic bread also garlic toast consists of bread usually a
-                                                baguette or
-                                                sour dough like a ciabatta</span>
+                                            <h5 class="text-color">{{ category }}</h5>
+                                            <span>{{ category.description }}</span>
                                         </div>
+                                        <!-- food item -->
                                         <ul>
+                                            {% for food in category.fooditems.all %}
                                             <li>
-                                                <div class="image-holder"> <a href="assets/extra-images/cover-photo12-1024x187.jpg"><img src="assets/extra-images/cover-photo12-150x150.jpg" alt=""></a></div>
+                                                <div class="image-holder"><img src="{{ food.image.url }}" alt="dish image"></div>
                                                 <div class="text-holder">
-                                                    <h6>Garlic Pizza Bread 9 " Thin</h6>
-                                                    <span>Butter and crushed garlic, then spread a little over
-                                                        the
-                                                        pizza</span>
+                                                    <h6>{{ food }}</h6>
+                                                    <span>{{ food.description }}</span>
                                                 </div>
                                                 <div class="price-holder">
-                                                    <span class="price">£2.50</span>
+                                                    <span class="price">€{{ food.price }}</span>
                                                     <a href="#" class="restaurant-add-menu-btn"><i class="icon-plus4 text-color"></i></a>
                                                     <span id="add-menu-loader-10"></span>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="image-holder"> <a href="assets/extra-images/cover-photo10-1024x187.jpg"><img src="assets/extra-images/cover-photo10-150x150.jpg" alt=""></a></div>
-                                                <div class="text-holder">
-                                                    <h6>Garlic Bread 12" Deep</h6>
-                                                    <span>Pizza bread made with extra virgin olive oil</span>
-                                                </div>
-                                                <div class="price-holder">
-                                                    <span class="price">£3.50</span>
-                                                    <a href="#" class="restaurant-add-menu-btn"><i class="icon-plus4 text-color"></i></a>
-                                                    <span id="add-menu-loader-11"></span>
-                                                </div>
-                                            </li>
-                                        </ul>                                        
+                                            {% endfor %}
+                                        </ul>
+                                        {% endfor %}                                        
                                     </div>
                                 </div>
                             </div>                  
