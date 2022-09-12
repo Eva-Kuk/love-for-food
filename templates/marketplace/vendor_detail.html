@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main-section">
+    <div class="page-section restaurant-detail-image-section" style=" background: url({% if vendor.user_profile.cover_photo %}{{ vendor.user_profile.cover_photo.url }}{% else %}{% static 'images/default-cover.png' %}{% endif %}) no-repeat scroll 0 0 / cover;">
+        <!-- Container Start -->
+        <div class="container">
+            <!-- Row Start -->
+            <div class="row">
+                <!-- Column Start -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="company-info-detail">
+                        <div class="company-info">
+                            <div class="img-holder">
+                                <figure>
+                                    <img src="assets/extra-images/listing-logo18.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="text-holder">
+                                <span class="restaurant-title">Restaurant Demo</span>
+                                <div class="text">
+                                    <i class="icon-local_pizza"></i>
+                                    <p>Apple Juice</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-timing reviews-sortby">
+                            
+                            <ul>
+                                <li>
+                                    <a href="#" class="reviews-sortby-active">
+                                        <span>Today :</span>
+                                        11:00 am - 11:00 pm <i class="icon-chevron-small-down"></i>
+                                    </a>
+                                    <ul class="delivery-dropdown">
+                                        <li><a href="#"><span class="opend-day">Monday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Tuesday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Wednesday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Thursday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Friday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Saturday</span> <span class="opend-time"><small>:</small> 11:00 am - 11:00
+                                                    pm</span></a></li>
+                                        <li><a href="#"><span class="opend-day">Sunday</span> <span class="opend-time close-day"><small>:</small>Closed</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column End -->
+            </div>
+            <!-- Row End -->
+        </div>
+        <!-- Container End -->
+    </div>
+
+    <div class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 sticky-sidebar">
+                    <div class="filter-toggle">
+                        <span class="filter-toggle-text">Categories By</span><i class="icon-chevron-down"></i>
+                    </div>
+                    <div class="filter-wrapper">
+                        <div class="categories-menu">
+                            <h6><i class="icon-restaurant_menu"></i>Categories</h6>
+                            <ul class="menu-list">
+                                <li class="active"><a href="#" class="menu-category-link"> Pizzas </a></li>
+                                <li class=""><a href="#" class="menu-category-link"> Garlic Bread </a></li>
+                                <li class=""><a href="#" class="menu-category-link"> Kebabs </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="tabs-holder horizontal">
+                        <ul class="stickynav-tabs nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home"><i class="icon- icon-room_service"></i>Menu</a></li>
+                            
+                        </ul>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane in active">
+                                <div class="menu-itam-holder">
+                                    
+                                    <div id="menu-item-list-6272" class="menu-itam-list">
+                                        
+                                        
+                                        <div class="element-title" id="menu-category-2">
+                                            <h5 class="text-color">Garlic Bread</h5>
+                                            <span>Garlic bread also garlic toast consists of bread usually a
+                                                baguette or
+                                                sour dough like a ciabatta</span>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div class="image-holder"> <a href="assets/extra-images/cover-photo12-1024x187.jpg"><img src="assets/extra-images/cover-photo12-150x150.jpg" alt=""></a></div>
+                                                <div class="text-holder">
+                                                    <h6>Garlic Pizza Bread 9 " Thin</h6>
+                                                    <span>Butter and crushed garlic, then spread a little over
+                                                        the
+                                                        pizza</span>
+                                                </div>
+                                                <div class="price-holder">
+                                                    <span class="price">£2.50</span>
+                                                    <a href="#" class="restaurant-add-menu-btn"><i class="icon-plus4 text-color"></i></a>
+                                                    <span id="add-menu-loader-10"></span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="image-holder"> <a href="assets/extra-images/cover-photo10-1024x187.jpg"><img src="assets/extra-images/cover-photo10-150x150.jpg" alt=""></a></div>
+                                                <div class="text-holder">
+                                                    <h6>Garlic Bread 12" Deep</h6>
+                                                    <span>Pizza bread made with extra virgin olive oil</span>
+                                                </div>
+                                                <div class="price-holder">
+                                                    <span class="price">£3.50</span>
+                                                    <a href="#" class="restaurant-add-menu-btn"><i class="icon-plus4 text-color"></i></a>
+                                                    <span id="add-menu-loader-11"></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
