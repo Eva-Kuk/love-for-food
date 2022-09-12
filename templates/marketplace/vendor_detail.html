@@ -16,19 +16,18 @@
                         <div class="company-info">
                             <div class="img-holder">
                                 <figure>
-                                    <img src="assets/extra-images/listing-logo18.png" alt="">
+                                    {% if vendor.user_profile.profile_picture %}
+                                    <img src="{{ vendor.user_profile.profile_picture.url }}" class="img-list wp-post-image" alt="">
+                                    {% else %}
+                                    <img src="{% static 'images/default-profile.png' %}" class="img-list wp-post-image" alt="">
+                                    {% endif %}
                                 </figure>
                             </div>
                             <div class="text-holder">
-                                <span class="restaurant-title">Restaurant Demo</span>
-                                <div class="text">
-                                    <i class="icon-local_pizza"></i>
-                                    <p>Apple Juice</p>
-                                </div>
+                                <span class="restaurant-title">{{ vendor.vendor_name }}</span>
                             </div>
                         </div>
-                        <div class="delivery-timing reviews-sortby">
-                            
+                        <div class="delivery-timing reviews-sortby"> 
                             <ul>
                                 <li>
                                     <a href="#" class="reviews-sortby-active">
@@ -85,15 +84,11 @@
                     <div class="tabs-holder horizontal">
                         <ul class="stickynav-tabs nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#home"><i class="icon- icon-room_service"></i>Menu</a></li>
-                            
                         </ul>
                         <div class="tab-content">
                             <div id="home" class="tab-pane in active">
-                                <div class="menu-itam-holder">
-                                    
-                                    <div id="menu-item-list-6272" class="menu-itam-list">
-                                        
-                                        
+                                <div class="menu-itam-holder">                       
+                                    <div id="menu-item-list-6272" class="menu-itam-list">                
                                         <div class="element-title" id="menu-category-2">
                                             <h5 class="text-color">Garlic Bread</h5>
                                             <span>Garlic bread also garlic toast consists of bread usually a
@@ -127,16 +122,13 @@
                                                     <span id="add-menu-loader-11"></span>
                                                 </div>
                                             </li>
-                                        </ul>
-                                        
+                                        </ul>                                        
                                     </div>
                                 </div>
-                            </div>
-                            
+                            </div>                  
                         </div>
                     </div>
-                </div>
-                
+                </div>               
             </div>
         </div>
     </div>
