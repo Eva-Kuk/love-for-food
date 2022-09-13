@@ -31,5 +31,5 @@ def vendor_detail(request, vendor_slug):
     return render(request, 'marketplace/vendor_detail.html', context)
 
 
-def add_to_cart(request, food_id=None):
-    return HttpResponse('Testing')
+def add_to_cart(request, food_id):
+    return HttpResponse(food_id)
