@@ -29,7 +29,9 @@
 	<script src="{% static 'js/bootstrap.js' %}"></script>
 
 	<!-- Load the places library-->
+	{% if '/profile/' in request.GET %}
 	<script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}&libraries=places&callback=initAutoComplete" async defer></script>
+	{% endif %}
 	<script src="{% static 'js/custom.js' %}"></script>
 	
 	<style>
