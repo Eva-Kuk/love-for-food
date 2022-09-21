@@ -126,4 +126,29 @@ $(document).ready(function() {
             }
         })
     })
+
+    // DELETE CART ITEM
+    $('.delete_cart').on('click', function(e) {
+        e.preventDefault();
+
+        //alert('testing');
+        //return false;
+
+        cart_id = $(this).attr('data-id');
+        url = $(this).attr('data-url');
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function(response) {
+                console.log(response)
+                if (response.status == 'Failed') {
+                    swal(response.message, '', 'error')
+                } else {
+                    $('#cart_counter').html(response.cart_counter['cart_count']);
+                    swal(response.status, response.message, "success")
+                }
+            }
+        })
+    })
 });
