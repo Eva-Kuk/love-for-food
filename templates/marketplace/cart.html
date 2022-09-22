@@ -30,6 +30,7 @@
                                                     <div class="text-holder">
                                                         <h6>{{ item.fooditem }}</h6>
                                                         <span>{{ item.fooditem.description }}</span>
+                                                        <a href="{% url 'vendor_detail' item.fooditem.vendor.vendor_slug %}" class="badge badge-warning">{{ item.fooditem.vendor }}</a>
                                                     </div>
                                                     <div class="price-holder">
                                                         <span class="price">€{{ item.fooditem.price }}</span>
