@@ -20,11 +20,11 @@
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 					<div class="main-search fancy bg-holder">
-						<form>
+						<form action="{% url 'search' %}" method="GET">
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
+								<div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
 									<div class="field-holder">
-										<input type="text" placeholder="Resturant name">
+										<input type="text" name="rest_name" placeholder="Resturant name">
 									</div>
 								</div>
 								<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
@@ -33,9 +33,14 @@
 											<li class="select-location">
 												<div class="foodbakery-locations-fields-group foodbakery-focus-out">
 													<span class="foodbakery-search-location-icon"><i class="icon-location"></i></span>
-													<span id="foodbakery_radius_location_open333" class="foodbakery-radius-location"><i class="icon-target5"></i></span>
-													<input type="text" class="location-field-text filter" placeholder="All Locations">
+													<!-- icon for geo location
+														<span id="foodbakery_radius_location_open333" class="foodbakery-radius-location"><i class="icon-target5"></i></span>
+													-->
+													<input type="text" name="address" class="location-field-text filter" id="id_address" placeholder="All Locations" required>
+													<input type="hidden" name="lat" value="" id="id_latitude">
+													<input type="hidden" name="lng" value="" id="id_longitude">
 												</div>
+												<!-- code for the geolocation
 												<div class="select-location" id="foodbakery-radius-range333" style="display: none;">
 													<div class="select-popup popup-open">
 														<a id="location_close_popup333" href="javascript:0;" class="location-close-popup">
@@ -76,11 +81,25 @@
 														<p class="my-location">of <i class="cs-color icon-location-arrow"></i><a id="foodbakery-geo-location-all" class="cs-color foodbakery-geo-location313324" href="javascript:void(0)">My location</a></p>
 													</div>
 												</div>
+												-->
 											</li>
 										</ul>
 									</div>
 								</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+									<select name="radius" id="radius" style="height:50px; required">
+										<option value="" selected>Choose Radius</option>
+										<option value="5" selected>5km</option>
+										<option value="10" selected>10km</option>
+										<option value="15" selected>15km</option>
+										<option value="25" selected>25km</option>
+										<option value="50" selected>50km</option>
+										<option value="75" selected>75km</option>
+										<option value="100" selected>100km</option>
+									</select>
+								</div>
+									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+								
 									<div class="field-holder">
 										<input type="submit" value="Search">
 									</div>
