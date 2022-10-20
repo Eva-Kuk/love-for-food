@@ -12,5 +12,6 @@
         "swal",
         "uidb",
         "vprofile"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
