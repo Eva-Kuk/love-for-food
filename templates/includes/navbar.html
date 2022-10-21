@@ -88,7 +88,7 @@
             var current_location = response.results[0].formatted_address
             x.value = current_location
             //console.log(location)
-
+            window.location = '?lat='+lat+'&lng='+lng
         }
       })
     }
