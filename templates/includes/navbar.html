@@ -55,24 +55,41 @@
 
 <script>
     var x = document.getElementById("location");
-    
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
+      } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
     }
     
     function showPosition(position) {
-        var lat = position.coords.latitude
-        var lng = position.coords.longitude
+        //var lat = position.coords.latitude
+        //var lng = position.coords.longitude
 
-        x.value = lat + ', '+lng
+        var lat = '53.2920186'
+        var lng = '-6.2721895'
 
-        // console.log(position);
-     //x.innerHTML = "Latitude: " + position.coords.latitude + 
-     //"<br>Longitude: " + position.coords.longitude;
+        // x.value = lat +', '+lng
+       // console.log(position);
+      // x.innerHTML = "Latitude: " + position.coords.latitude +
+      // "<br>Longitude: " + position.coords.longitude;
+
+      //hit AJAX request to googlemaps api endpoint and get the location data using those lat and lng
+      var GOOGLE_API_KEY = "{{ GOOGLE_API_KEY }}"
+      var url ="https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"+&key="+GOOGLE_API_KEY
+        // console.log(url);
+    
+     $.ajax({
+        url:url,
+        type: "GET",
+        success: function(response){
+            //console.log(response)
+            var current_location = response.results[0].formatted_address
+            x.value = current_location
+            //console.log(location)
+
+        }
+      })
     }
     </script>
-
