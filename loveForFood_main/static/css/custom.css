@@ -75,3 +75,11 @@
 table>tbody>td>td {
     border: none !important;
 }
+
+#opening_hours select {
+    padding: 5px 10px;
+}
+
+.btn-success.add_hour {
+    padding: 7px 15px 7px 15px;
+}
