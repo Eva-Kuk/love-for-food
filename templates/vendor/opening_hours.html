@@ -15,7 +15,7 @@
                             <hr>
                             <table class="table opening_hours" style="width: 500px; border: none !important;">
                                 <tbody>
-                                    {% for hours in opening_hours %}
+                                    {% for hour in opening_hours %}
                                     <tr>
                                         <td><b>{{ hour }}</b></td>
                                         <td>{% if hour.is_closed %}Closed{% else %}{{ hour.from_hour }} - {{ hour.to_hour }}{%endif%}</td>
@@ -28,6 +28,7 @@
                             <br>
 
                             <form id="opening_hours">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-2">
                                         {{ form.day }}
@@ -42,7 +43,7 @@
                                         {{ form.is_closed }} Set as Closed
                                     </div>
                                     <div class="col-md-2">
-                                        <button class="btn btn-success">
+                                        <button class="btn btn-success add_hour">
                                             Add Hours
                                         </button>
                                     </div>
