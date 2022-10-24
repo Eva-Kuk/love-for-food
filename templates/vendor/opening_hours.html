@@ -1,24 +1,53 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% block content %}
-{% include 'includes/alerts.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %} {% include 'includes/alerts.html' %}
 <div class="main-section">
     {% include 'includes/cover.html' %}
     <div class="page-section account-header buyer-logged-in">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                   <!-- Load the sidebar here -->
-                   {% include 'includes/v_sidebar.html' %}
+                    <!-- Load the sidebar here -->
+                    {% include 'includes/v_sidebar.html' %}
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="user-dashboard loader-holder">
                         <div class="user-holder">
                             <h5 class="text-uppercase">Opening Hours</h5>
                             <hr>
-                           
-                            
+                            <table class="table opening_hours" style="width: 500px; border: none !important;">
+                                <tbody>
+                                    {% for hours in opening_hours %}
+                                    <tr>
+                                        <td><b>{{ hour }}</b></td>
+                                        <td>{% if hour.is_closed %}Closed{% else %}{{ hour.from_hour }} - {{ hour.to_hour }}{%endif%}</td>
+                                        <td><a href="#">Remove</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <br>
+                            <br>
+
+                            <form id="opening_hours">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        {{ form.day }}
+                                    </div>
+                                    <div class="col-md-2">
+                                        {{ form.from_hour }}
+                                    </div>
+                                    <div class="col-md-2">
+                                        {{ form.to_hour }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        {{ form.is_closed }} Set as Closed
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-success">
+                                            Add Hours
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

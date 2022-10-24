@@ -71,3 +71,7 @@
 .copy-right p a {
     color: #009A44 !important;
 }
+
+table>tbody>td>td {
+    border: none !important;
+}
