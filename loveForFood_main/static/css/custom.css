@@ -72,7 +72,7 @@
     color: #009A44 !important;
 }
 
-table>tbody>td>td {
+.table>tbody>tr>td {
     border: none !important;
 }
 

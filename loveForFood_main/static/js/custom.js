@@ -238,7 +238,18 @@ $(document).ready(function() {
                         'csrfmiddlewaretoken': csrf_token,
                     },
                     success: function(response) {
-                        console.log(response)
+                        if (response.status == 'success') {
+                            if (response.is_closed == 'Closed') {
+                                html = '<tr><td><b>' + response.day + '</b></td><td>Closed</td><td><a href="#">Remove</a></td></tr>'
+                            } else {
+                                html = '<tr><td><b>' + response.day + '</b></td><td>' + response.from_hour + ' - ' + response.to_hour + '</td><td><a href="#">Remove</a></td></tr>'
+                            }
+
+                            $(".opening_hours").append(html)
+                            document.getElementById("opening_hours").reset();
+                        } else {
+                            swal(response.message, '', "error")
+                        }
                     }
                 })
             } else {
