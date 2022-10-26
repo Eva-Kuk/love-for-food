@@ -1,4 +1,4 @@
-from sqlite3 import IntegrityError
+from django.db import IntegrityError
 from urllib import response
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http.response import HttpResponse, JsonResponse
@@ -218,7 +218,7 @@ def add_opening_hours(request):
                         response = {'status': 'success', 'id': hour.id, 'day': day.get_day_display(), 'from_hour': hour.from_hour, 'to_hour': to_hour}
                 return JsonResponse(response)
             except IntegrityError as e:
-                response = {'status': 'failed'}
+                response = {'status': 'failed', 'message': from_hour+'-'+to_hour+' already exists for this day!'}
                 return JsonResponse(response)
         else:
             HttpResponse('Invalid request')
