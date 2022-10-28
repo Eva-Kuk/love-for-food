@@ -13,7 +13,7 @@ from django.contrib.gis.geos import GEOSGeometry
 from django.contrib.gis.measure import D #Distance "D" is a shortcut for "Distance"
 from django.contrib.gis.db.models.functions import Distance
 
-from datetime import date
+from datetime import date, datetime
 
 
 def marketplace(request):
@@ -41,11 +41,28 @@ def vendor_detail(request, vendor_slug):
     
     # Check current day's opening hours
     today_date = date.today()
+    # print(today)
     today = today_date.isoweekday()
-    print(today)
+    
     current_opening_hours = OpeningHour.objects.filter(vendor=vendor, day=today)
-    print(current_opening_hours)
- 
+    now = datetime.now()
+    # print(now)
+    # print(current_opening_hours)
+    current_time = now.strftime("%H:%M:%S")
+    # print(type(current_time))
+    
+    is_open = None
+    for i in current_opening_hours:
+        start = str(datetime.strptime(i.from_hour, "%I:%M %p").time())
+        end = str(datetime.strptime(i.to_hour, "%I:%M %p").time())
+        # print(start, end)
+        # print(type(start))
+        if current_time > start and current_time < end:
+            is_open = True
+            break
+        else:
+            is_open = False
+    # print(is_open)
     if request.user.is_authenticated:
         cart_items = Cart.objects.filter(user=request.user)
     else:
@@ -55,6 +72,7 @@ def vendor_detail(request, vendor_slug):
         'categories':categories,
         'cart_items':cart_items,
         'opening_hours': opening_hours,
+        'is_open': is_open
     }
     return render(request, 'marketplace/vendor_detail.html', context)
 
