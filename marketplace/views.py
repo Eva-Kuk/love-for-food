@@ -45,23 +45,23 @@ def vendor_detail(request, vendor_slug):
     today = today_date.isoweekday()
     
     current_opening_hours = OpeningHour.objects.filter(vendor=vendor, day=today)
-    now = datetime.now()
+    # now = datetime.now()
     # print(now)
     # print(current_opening_hours)
-    current_time = now.strftime("%H:%M:%S")
+    # current_time = now.strftime("%H:%M:%S")
     # print(type(current_time))
     
-    is_open = None
-    for i in current_opening_hours:
-        start = str(datetime.strptime(i.from_hour, "%I:%M %p").time())
-        end = str(datetime.strptime(i.to_hour, "%I:%M %p").time())
+    # is_open = None
+    # for i in current_opening_hours:
+    #     start = str(datetime.strptime(i.from_hour, "%I:%M %p").time())
+    #     end = str(datetime.strptime(i.to_hour, "%I:%M %p").time())
         # print(start, end)
         # print(type(start))
-        if current_time > start and current_time < end:
-            is_open = True
-            break
-        else:
-            is_open = False
+    #     if current_time > start and current_time < end:
+    #        is_open = True
+    #         break
+    #     else:
+    #         is_open = False
     # print(is_open)
     if request.user.is_authenticated:
         cart_items = Cart.objects.filter(user=request.user)
@@ -72,7 +72,8 @@ def vendor_detail(request, vendor_slug):
         'categories':categories,
         'cart_items':cart_items,
         'opening_hours': opening_hours,
-        'is_open': is_open
+        'current_opening_hours':current_opening_hours,
+    #   'is_open': is_open
     }
     return render(request, 'marketplace/vendor_detail.html', context)
 

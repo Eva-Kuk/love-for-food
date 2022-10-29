@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="main-section">
     <div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 60px;padding-bottom: 10px;margin-bottom: 0px;">
         <div class="container">
@@ -10,7 +6,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <aside class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                         
+
                         </aside>
                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                             <div class="listing-sorting-holder">
@@ -34,29 +30,29 @@
                                                     {% endif %}
                                                 </a>
                                             </figure>
-                                            <span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span>
+                                            {% if vendor.is_open %}
+                                            <span class="restaurant-status open"><em class="bookmarkRibbon"></em>Open</span> {% else %}
+                                            <span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span> {% endif %}
                                         </div>
                                         <div class="text-holder">
                                             <div class="post-title">
                                                 <h5>
-                                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}">{{ vendor.vendor_name }}</a>                           
+                                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}">{{ vendor.vendor_name }}</a>
                                                 </h5>
                                             </div>
                                             {% if vendor.user_profile.address %}
-                                            <span><small class="text-muted">{{ vendor.user_profile.address }}</small></span>       
-                                            {% endif %}
-                                            {% if source_location %}
+                                            <span><small class="text-muted">{{ vendor.user_profile.address }}</small></span> {% endif %} {% if source_location %}
                                             <br>
-                                            <span><small><b>{{vendor.kms}}</b>km away from your {{source_location}}</small></span>                                      
-                                            </div>
-                                            {% endif %}
+                                            <span><small><b>{{vendor.kms}}</b>km away from your {{source_location}}</small></span>
+                                        </div>
+                                        {% endif %}
                                         <div class="list-option">
-                                             <a href="{% url 'vendor_detail' vendor.vendor_slug %}" class="viewmenu-btn text-color">View Menu</a>
+                                            <a href="{% url 'vendor_detail' vendor.vendor_slug %}" class="viewmenu-btn text-color">View Menu</a>
                                         </div>
                                     </li>
                                     {% endfor %}
                                 </ul>
-                            </div>                           
+                            </div>
                         </div>
                         <div class="section-sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <div class="message-box" style="background-color: #3d8d1b;">
