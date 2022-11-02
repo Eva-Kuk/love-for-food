@@ -48,6 +48,10 @@
     background: #191818 !important;
 }
 
+.min-height {
+    min-height: 50vh;
+}
+
 
 /*
 .main-header .login-option a.get-start-btn {
