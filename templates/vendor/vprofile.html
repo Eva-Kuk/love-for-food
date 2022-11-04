@@ -1,16 +1,12 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% block content %}
-{% include 'includes/alerts.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %} {% include 'includes/alerts.html' %}
 <div class="main-section">
     {% include 'includes/cover.html' %}
     <div class="page-section account-header buyer-logged-in">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                   <!-- Load the sidebar here -->
-                   {% include 'includes/v_sidebar.html' %}
+                    <!-- Load the sidebar here -->
+                    {% include 'includes/v_sidebar.html' %}
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="user-dashboard loader-holder">
@@ -30,10 +26,8 @@
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
                                                                             {% if profile.profile_picture %}
-                                                                            <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Logo">
-                                                                            {% else%}
-                                                                            <img class="thumbnail" src="{% static 'images/default-profile.png' %}" alt="Logo">
-                                                                            {% endif %}
+                                                                            <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Logo"> {% else%}
+                                                                            <img class="thumbnail" src="{% static 'images/default-profile.png' %}" alt="Logo"> {% endif %}
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -45,7 +39,7 @@
                                                                 {{profile_form.profile_picture}}
                                                             </div>
                                                         </div>
-                                                       <label class='text-danger'> {{ profile_form.profile_picture.errors }}</label>
+                                                        <label class='text-danger'> {{ profile_form.profile_picture.errors }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -56,10 +50,8 @@
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
                                                                             {% if profile.cover_photo %}
-                                                                            <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover photo">
-                                                                            {% else %}
-                                                                            <img class="thumbnail" src="{% static "images/default-cover.png" %}" alt="Cover photo">
-                                                                            {% endif %}
+                                                                            <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover photo"> {% else %}
+                                                                            <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Cover photo"> {% endif %}
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -69,9 +61,9 @@
                                                             <label>Update Cover Photo</label>
                                                             <div class="upload-gallery">
                                                                 {{profile_form.cover_photo}}
-                                                            </div>                          
+                                                            </div>
                                                         </div>
-                                                        <label class='text-danger'> {{ profile_form.cover_photo.errors }}</label>                                                       
+                                                        <label class='text-danger'> {{ profile_form.cover_photo.errors }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -91,67 +83,59 @@
                                                             <label>Update License</label>
                                                             <div class="upload-gallery">
                                                                 {{vendor_form.vendor_license}}
-                                                            </div>                                                         
+                                                            </div>
                                                         </div>
                                                         <label class='text-danger'> {{ vendor_form.vendor_license.errors }}</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Restaurant name *</label>
-                                                        {{vendor_form.vendor_name}}
+                                                        <label>Restaurant name *</label> {{vendor_form.vendor_name}}
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Address *</label>
-                                                        {{profile_form.address}}
+                                                        <label>Address *</label> {{profile_form.address}}
                                                         <small class="text-muted float-right">powered by Google</small>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Country *</label>
-                                                        {{profile_form.country}}
+                                                        <label>Country *</label> {{profile_form.country}}
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>County *</label>
-                                                        {{profile_form.state}}
+                                                        <label>County *</label> {{profile_form.state}}
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>City *</label>
-                                                        {{profile_form.city}}
+                                                        <label>City *</label> {{profile_form.city}}
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Eircode *</label>
-                                                        {{profile_form.pin_code}}
+                                                        <label>Eircode *</label> {{profile_form.pin_code}}
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Latitude</label>
-                                                        {{profile_form.latitude}}
+                                                        <label>Latitude</label> {{profile_form.latitude}}
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                     <div class="field-holder">
-                                                        <label>Longtitude</label>
-                                                        {{profile_form.longitude}}
+                                                        <label>Longtitude</label> {{profile_form.longitude}}
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </li>
                                     </ul>
@@ -164,7 +148,7 @@
                                     </div>
                                 </div>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
