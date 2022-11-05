@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="page-section restaurant-detail-image-section" style=" background: url({% static 'extra-images/cover-photo1.jpg' %}) no-repeat scroll 0 0 / cover;">
+<div class="page-section restaurant-detail-image-section" style="background: url({% if user_profile.cover_photo %}{{ user_profile.cover_photo.url }}{% else %}{% static 'extra-images/default-cover-photo.jpg' %}{% endif %}) no-repeat scroll 0 0 / cover;">
     <!-- Container Start -->
     <div class="container">
         <!-- Row Start -->
@@ -11,15 +11,17 @@
                     <div class="company-info">
                         <div class="img-holder">
                             <figure>
-                                <img src="{% static 'extra-images/listing-logo18.png' %}" alt="">
+                                {% if user_profile.profile_picture %}
+                                <img src="{{user_profile.profile_picture.url}}" alt="Profile picture"> {% else%}
+                                <img src="{% static 'extra-images/listing-logo18.png' %}" alt=""> {% endif %}
                             </figure>
                         </div>
 
                         <div class="text-holder">
-                            <span class="restaurant-title">Anna Janicka</span>
+                            <span class="restaurant-title">{{ user.first_name }} {{ user.last_name }}</span>
                             <div class="text">
                                 <i class="icon-location"></i>
-                                <p>+353 890703289</p>
+                                <p>{{ user.phone_number }}</p>
                             </div>
                         </div>
                     </div>

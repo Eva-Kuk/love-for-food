@@ -8,7 +8,7 @@ from django.contrib import messages
 def cprofile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
-        profile_form = UserProfileForm(request.POST, request.Files, instance=profile)
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=profile)
         user_form = UserInfoForm(request.POST, instance=request.user)
         if profile_form.is_valid() and user_form.is_valid():
             profile_form.save()

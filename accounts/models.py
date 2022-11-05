@@ -1,4 +1,3 @@
-from asyncio.base_subprocess import BaseSubprocessTransport
 from dataclasses import field
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
