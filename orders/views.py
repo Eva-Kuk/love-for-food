@@ -4,6 +4,7 @@ from marketplace.context_processors import get_cart_amounts
 from .forms import OrderForm
 from .models import Order
 import simplejson as json
+from .utils import generate_order_number
 
 
 def place_order(request):
@@ -35,7 +36,8 @@ def place_order(request):
             order.tax_data = json.dumps(tax_data)
             order.total_tax = total_tax
             order.payment_method = request.POST['payment_method']
-            order.order_number = '123'
+            order.save() # order id/pk is generated 
+            order.order_number = generate_order_number(order.id)
             order.save()
             return redirect('place_order')
         else:
