@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from marketplace.models import Cart
 from marketplace.context_processors import get_cart_amounts
 from .forms import OrderForm
-from .models import Order, Payment
+from .models import Order, Payment, OrderedFood
 import simplejson as json
 from .utils import generate_order_number
 
@@ -71,8 +71,22 @@ def payments(request):
         order.payment = payment
         order.is_ordered = True
         order.save()
-        return HttpResponse('Saved!')
+
         # Move the Cart items to ordered food model
+        cart_items = Cart.objects.filter(user=request.user)
+        for item in cart_items:
+            ordered_food = OrderedFood()
+            ordered_food.order = order
+            ordered_food.payment = payment
+            ordered_food.user = request.user
+            ordered_food.fooditem = item.fooditem
+            ordered_food.quantity = item.quantity
+            ordered_food.price = item.fooditem.price
+            ordered_food.amount = item.fooditem.price * item.quantity # total amount
+            ordered_food.save()
+            
+        return HttpResponse('saved ordered food!')
+        
         
         # Send order confirmation email to the customer
         
