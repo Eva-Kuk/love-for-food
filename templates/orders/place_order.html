@@ -3,7 +3,6 @@
     <div class="page-section">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="tabs-holder horizontal">
                         <ul class="stickynav-tabs nav nav-tabs">
@@ -41,7 +40,6 @@
                             <div id="home" class="tab-pane in active">
                                 <div class="menu-itam-holder">
                                     <div>
-
                                         <table class="table">
                                             <tbody>
                                                 {% for item in cart_items %}
@@ -53,9 +51,7 @@
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
-
                                         </table>
-
                                         <ul>
                                             <li style="list-style-type: none;">
                                                 Subtotal
@@ -64,7 +60,6 @@
                                                 <span id="subtotal">{{ subtotal }}</span>
                                                 </span>
                                             </li>
-
                                             {% for key, value in tax_dict.items %} {% for i, j in value.items %}
                                             <li style="list-style-type: none;">
                                                 {{ key }} <small>({{ i }}%)</small>
@@ -112,7 +107,6 @@
         }
         return cookieValue;
     }
-
     var grand_total = "{{ grand_total }}"
     var url = "{% url 'payments' %}"
     var order_number = "{{ order.order_number }}"
@@ -145,19 +139,14 @@
                 var transaction_id = transaction.id
                 var status = orderData.status
                 var payment_method = 'PayPal'
-
                 sendTransaction(transaction_id, payment_method, status)
-
-
-                // Replace the above to show a success message within this page, e.g.
-                // const element = document.getElementById('paypal-button-container');
-                // element.innerHTML = '';
-                // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                // Or go to another URL:  actions.redirect('thank_you.html');
+                    // Replace the above to show a success message within this page, e.g.
+                    // const element = document.getElementById('paypal-button-container');
+                    // element.innerHTML = '';
+                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                    // Or go to another URL:  actions.redirect('thank_you.html');
             });
         }
-
-
     }).render('#paypal-button-container');
 
     // Send the data to payments view to store in the database
