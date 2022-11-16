@@ -51,7 +51,7 @@
                                 <span id="subtotal">{{ subtotal }}</span>
                                 </span>
                             </li>
-                            {% for key, value in tax_dict.items %} {% for i, j in value.items %}
+                            {% for key, value in tax_data.items %} {% for i, j in value.items %}
                             <li style="list-style-type: none;">
                                 {{ key }} <small>({{ i }}%)</small>
                                 <span class="price float-right">
@@ -65,12 +65,21 @@
                                 TOTAL
                                 <span class="price float-right">
                                     <span class="currency">€</span>
-                                <span id="total">{{ grand_total }}</span>
+                                <span id="total">{{ order.total }}</span>
                                 </span>
                             </li>
-                            <!-- Set up a container element for the button from developer PayPal buttons integrations site -->
-                            <div id="paypal-button-container"></div>
                         </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-block font-weight-bold">Thank you for ordering with us.</span>
+                        <span>LoveForFood Team</span>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <span class="d-block font-weight-bold">Need help? </span>
+                        <span> Call - +353 560604268</span>
                     </div>
                 </div>
             </div>
