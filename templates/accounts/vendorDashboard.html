@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
-{% include 'includes/alerts.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %} {% include 'includes/alerts.html' %}
 
 <div class="main-section">
     {% include 'includes/cover.html' %}
@@ -10,13 +6,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                   <!-- Load the sidebar here -->
-                   {% include 'includes/v_sidebar.html' %}
+                    <!-- Load the sidebar here -->
+                    {% include 'includes/v_sidebar.html' %}
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <div class="user-dashboard loader-holder">
                         <div class="user-holder">
-                            <h5 class="text-text-uppercase">Overview</h5>
+                            <h5 class="text-uppercase">Overview</h5>
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="card">
@@ -24,9 +20,11 @@
                                             Total Orders
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="#"><h5 class="card-title">123</h5></a>
+                                            <a href="#">
+                                                <h5 class="card-title">123</h5>
+                                            </a>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="card">
@@ -34,9 +32,11 @@
                                             Total Revenue
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="#"><h5 class="card-title">€3456.0</h5></a>                                           
+                                            <a href="#">
+                                                <h5 class="card-title">€3456.0</h5>
+                                            </a>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="card">
@@ -44,13 +44,15 @@
                                             This Month
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="#"><h5 class="card-title">€145.0</h5></a>
+                                            <a href="#">
+                                                <h5 class="card-title">€145.0</h5>
+                                            </a>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
-                            </div> 
+                            </div>
                             <br>
-                            <br>   
+                            <br>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="element-title has-border right-filters-row">
@@ -108,10 +110,10 @@
                                                     <div><span class="order-status" style="background-color: #047a06;">Completed</span></div>
                                                 </li>
                                             </ul>
-                                        </div>												
+                                        </div>
                                     </div>
                                 </div>
-                            </div>                         
+                            </div>
                         </div>
                     </div>
                 </div>
