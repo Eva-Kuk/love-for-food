@@ -8,7 +8,7 @@ class OrderedFoodInline(admin.TabularInline):
     extra = 0 # if there are any empty fields they will be deleted
     
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['order_number', 'name', 'phone', 'email', 'total', 'payment_method', 'status', 'is_ordered']
+    list_display = ['order_number', 'name', 'phone', 'email', 'total', 'payment_method', 'status', 'order_placed_to', 'is_ordered']
     inlines = [OrderedFoodInline]
 
 admin.site.register(Payment)
