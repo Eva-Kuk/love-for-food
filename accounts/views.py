@@ -182,7 +182,7 @@ def custDashboard(request):
 def vendorDashboard(request):
     vendor = Vendor.objects.get(user=request.user)
     orders = Order.objects.filter(vendors__in=[vendor.id], is_ordered=True).order_by('-created_at')
-    recent_orders = orders[:5]
+    recent_orders = orders[:10]
     context = {
         'orders': orders,
         'orders_count': orders.count(),
