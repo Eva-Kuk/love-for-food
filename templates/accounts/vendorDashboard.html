@@ -72,12 +72,12 @@
                                                 <tbody>
                                                     {% for order in recent_orders %}
                                                     <tr>
-                                                        <td><b><a href="{% url 'order_detail' order.order_number %}" class="text-dark">{{ order.order_number }}</a></b></td>
+                                                        <td><b><a href="{% url 'vendor_order_detail' order.order_number %}" class="text-dark">{{ order.order_number }}</a></b></td>
                                                         <td>{{ order.name }}</td>
                                                         <td>€{{ order.total }}</td>
                                                         <td>{{ order.status }}</td>
                                                         <td>{{ order.created_at }}</td>
-                                                        <td><a href="{% url 'order_detail' order.order_number %}" class="btn btn-danger">Details</a></td>
+                                                        <td><a href="{% url 'vendor_order_detail' order.order_number %}" class="btn btn-danger">Details</a></td>
                                                     </tr>
                                                     {% endfor %}
                                                 </tbody>
