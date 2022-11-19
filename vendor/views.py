@@ -248,4 +248,14 @@ def order_detail(request, order_number):
     except:
         return redirect('vendor')
     return render(request, 'vendor/order_detail.html', context)
+
+
+def my_orders(request):
+    vendor = Vendor.objects.get(user=request.user)
+    orders = Order.objects.filter(vendors__in=[vendor.id], is_ordered=True).order_by('-created_at')
+    
+    context = {
+       'orders': orders,
+    }
+    return render(request, 'vendor/my_orders.html', context)
         
