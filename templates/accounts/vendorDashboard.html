@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <a href="#">
-                                                <h5 class="card-title">€3456.0</h5>
+                                                <h5 class="card-title">€{{ total_revenue | floatformat:2 }}</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                                 <tbody>
                                                     {% for order in recent_orders %}
                                                     <tr>
-                                                        <td><b><a href="{% url 'vendor_order_detail' order.order_number %}" class="text-dark">{{ order.order_number }}</a></b></td>
+                                                        <td>{{ order.order_number }}</td>
                                                         <td>{{ order.name }}</td>
                                                         <td>€{{ order.get_total_by_vendor.grand_total }}</td>
                                                         <td>{{ order.status }}</td>

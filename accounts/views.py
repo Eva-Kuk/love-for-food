@@ -183,10 +183,16 @@ def vendorDashboard(request):
     vendor = Vendor.objects.get(user=request.user)
     orders = Order.objects.filter(vendors__in=[vendor.id], is_ordered=True).order_by('-created_at')
     recent_orders = orders[:10]
+    
+    #total revenue
+    total_revenue = 0
+    for i in orders:
+        total_revenue +=i.get_total_by_vendor()['grand_total']
     context = {
         'orders': orders,
         'orders_count': orders.count(),
         'recent_orders': recent_orders,
+        'total_revenue': total_revenue,
     }
     return render(request, 'accounts/vendorDashboard.html', context)
 

@@ -83,10 +83,10 @@ class Order(models.Model):
                         # print(val[i][j]) to print the value of the Second and Third Tier VAT 2.63 and 1.76
                         tax += float(val[i][j])
         grand_total = float(subtotal) + float(tax)
-        print('subtotal==>', subtotal)
-        print('tax==>', tax)
-        print('tax_dict==>', tax_dict)
-        print('grand_total==>', grand_total)
+        # print('subtotal==>', subtotal)
+        # print('tax==>', tax)
+        # print('tax_dict==>', tax_dict)
+        # print('grand_total==>', grand_total)
         context = {
             'subtotal': subtotal,
             'tax_dict': tax_dict,
