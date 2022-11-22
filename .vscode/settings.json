@@ -3,6 +3,7 @@
         "cprofile",
         "csrftoken",
         "cust",
+        "Datatables",
         "Eircode",
         "foodimages",
         "fooditem",
