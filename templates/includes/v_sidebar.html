@@ -6,8 +6,8 @@
             <li class="{% if 'menu-builder' in request.path %}active{% endif %}"><a href="{% url 'menu_builder' %}"><i class="icon-menu5"></i>Menu Builder</a></li>
             <li class="{% if 'opening-hour' in request.path %}active{% endif %}"><a href="{% url 'opening_hours' %}"><i class="icon-menu5"></i>Opening Hours</a></li>
             <li class="{% if '/my_orders/' in request.path %}active{% endif %}"><a href="{% url 'vendor_my_orders' %}"><i class="icon-add_shopping_cart"></i>Orders</a></li>
-            <li><a href="restaurant-earnings.html"><i class="icon-money"></i>Earnings</a></li>
-            <li><a href="restaurant-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
+            <!-- <li><a href="restaurant-earnings.html"><i class="icon-money"></i>Earnings</a></li> -->
+
             <li><a class="logout-btn" href="{% url 'logout' %}"><i class="icon-log-out"></i>Sign Out</a></li>
         </ul>
     </div>
