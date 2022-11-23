@@ -10,6 +10,7 @@ from accounts.utils import send_notification
 from django.contrib.auth.decorators import login_required
 from menu.models import FoodItem
 from marketplace.models import Tax
+from django.contrib.sites.shortcuts import get_current_site
 
 
 @login_required(login_url='login')
@@ -130,10 +131,20 @@ def payments(request):
         # Send order confirmation email to the customer
         mail_subject = 'Thank you for ordering with us.'
         mail_template = 'orders/order_confirmation_email.html'
+        
+        ordered_food = OrderedFood.objects.filter(order=order)
+        customer_subtotal = 0
+        for item in ordered_food:
+            customer_subtotal += (item.price * item.quantity)
+        tax_data = json.loads(order.tax_data)
         context = {
             'user': request.user,
             'order': order,
             'to_email': order.email,
+            'ordered_food': ordered_food,
+            'domain': get_current_site(request),
+            'customer_subtotal': customer_subtotal,
+            'tax_data': tax_data,
         }
         send_notification(mail_subject, mail_template, context)
         
