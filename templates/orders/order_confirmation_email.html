@@ -89,12 +89,12 @@
         <table bgcolor="#e8eaee" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 60px 60px;">
             <tbody>
                 <tr>Subtotal: €{{ customer_subtotal }}</tr>
-                {% for key, val in tax_data.items %} {% for i, j in val.val.items %}
+                {% for key, val in tax_data.items %} {% for i, j in val.items %}
                 <tr>
                     <td>{{ key }} <small>({{ i }}%)</small> : <span>€</span><span>{{ j }}</span></td>
                 </tr>
                 {% endfor %} {% endfor %}
-                <tr>Grand total: {{ order.total }}</tr>
+                <tr>Grand total: €{{ order.total }}</tr>
             </tbody>
 
 
