@@ -10,7 +10,7 @@
     <style type="text/css">
         #email {
             margin: auto;
-            width: 600px;
+            width: 70%;
             background-color: white;
         }
         
@@ -86,26 +86,27 @@
         </table>
 
         <!-- Order amounts -->
-        <table bgcolor="#e8eaee" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 60px 60px;">
+        <table bgcolor="#e8eaee" width="100%" role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 30px 30px 40px 40px;">
             <tbody>
                 <tr>Subtotal: €{{ customer_subtotal }}</tr>
                 {% for key, val in tax_data.items %} {% for i, j in val.items %}
                 <tr>
-                    <td>{{ key }} <small>({{ i }}%)</small> : <span>€</span><span>{{ j }}</span></td>
+                    <td>{{ key }} <small>({{ i }}%)</small> : <span>€{{ j }}</span></td>
                 </tr>
                 {% endfor %} {% endfor %}
                 <tr>Grand total: €{{ order.total }}</tr>
             </tbody>
+        </table>
 
 
-            <table role="presentation" bgcolor="#419a1c" width="100%">
-                <tr>
-                    <td align="center" style="padding: 15px 15px; color: #fff;">
-                        <p>© {% now "Y" %} LoveForFood Marketplace, All Rights Reserved.</p>
-                        <a href="http://{{domain}}" style="color:#fff;">Visit Website</a>
-                    </td>
-                </tr>
-            </table>
+        <table role="presentation" bgcolor="#419a1c" width="100%">
+            <tr>
+                <td align="center" style="padding: 15px 15px; color: #fff;">
+                    <p>© {% now "Y" %} LoveForFood Marketplace, All Rights Reserved.</p>
+                    <a href="http://{{domain}}" style="color:#fff;">Visit Website</a>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 

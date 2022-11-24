@@ -2,7 +2,7 @@ from django.db import models
 from accounts.models import User
 from menu.models import FoodItem
 from vendor.models import Vendor
-import json
+import simplejson as json
 
 request_object = ''
 
@@ -72,7 +72,7 @@ class Order(models.Model):
                  
             for key, val in data.items():
                 subtotal += float(key)
-                val = val.replace("'", '"') # value error dictionary has length 1 ; 2 is requires replace single quotation wuth double
+                val = val.replace("'", '"') # value error dictionary has length 1 ; 2 is requires replace single quotation with double
                 val = json.loads(val)
                 tax_dict.update(val)
 
