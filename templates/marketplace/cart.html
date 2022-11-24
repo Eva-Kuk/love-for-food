@@ -3,7 +3,6 @@
     <div class="page-section">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     <div class="tabs-holder horizontal">
                         <ul class="stickynav-tabs nav nav-tabs">
@@ -17,7 +16,6 @@
                                         <h3>Cart is empty </h3>
                                     </div>
                                     <div id="menu-item-list-6272" class="menu-itam-list">
-
                                         <ul>
                                             {% if cart_items %} {% for item in cart_items %}
                                             <li id="cart_item-{{ item.id }}">
@@ -43,7 +41,6 @@
                                         </ul>
                                     </div>
                                     {% for item in cart_items %}
-
 
                                     <span id="qty-{{item.fooditem.id}}" class="item_qty" data-qty="{{ item.quantity }}"></span> {% endfor %}
                                 </div>

@@ -102,6 +102,10 @@
     height: 0;
 }
 
+.company-logo ul {
+    margin: 0 !important;
+}
+
 
 /* Image style*/
 
@@ -115,4 +119,82 @@
 .payment-method [type=radio]:checked+img {
     outline: 2px solid#ff0000;
     padding: 5px;
+}
+
+.restaurants-images ul {
+    padding-top: 10px !important;
+    padding-bottom: 60px !important;
+}
+
+.footer-widget .widget-newsletter {
+    border-bottom: none !important;
+}
+
+#footer .widget-title {
+    margin-bottom: 30px !important;
+}
+
+.copy-right {
+    margin-bottom: 30px !important;
+}
+
+.copy-right p {
+    margin-bottom: 5px !important;
+}
+
+.button-style {
+    background: #009A44 !important;
+}
+
+table td,
+table th {
+    line-height: 1rem !important;
+}
+
+
+/* Media Queries for mobile devices */
+
+@media only screen and (max-width: 480px) {
+    a.get-start-btn {
+        display: block;
+        margin-top: 15px !important;
+        margin-left: 0 !important;
+    }
+    .search-bar {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        background-position: left !important;
+    }
+    .restaurants-images ul {
+        padding-top: 10px !important;
+        padding-bottom: 50px !important;
+    }
+    .company-logo ul li,
+    .company-logo ul li.has-border {
+        width: 49%;
+        padding: 20px;
+    }
+    .user-dashboard {
+        width: 100%;
+    }
+    .image-holder+.text-holder+.price-holder {
+        top: 10px;
+    }
+    .menu-itam-holder .quantity {
+        right: 0 !important;
+        margin-top: -50px !important;
+    }
+    .footer-widget .widget-newsletter {
+        margin-bottom: 10px !important;
+        padding-bottom: 0 !important;
+    }
+    .text-right-space {
+        width: 22% !important;
+    }
+    .table.opening_hours {
+        width: 100% !important;
+    }
+    .table td {
+        padding: 0.5rem !important;
+    }
 }

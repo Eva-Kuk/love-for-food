@@ -38,14 +38,14 @@
                         </ul>
                         <div class="tab-content">
                             <div id="home" class="tab-pane in active">
-                                <div class="menu-itam-holder">
+                                <div class="menu-itam-holder" style="padding:8px 20px 0;">
                                     <div>
                                         <table class="table">
                                             <tbody>
                                                 {% for item in cart_items %}
                                                 <tr>
-                                                    <td><img src="{{ item.fooditem.image.url }}" width="40" alt="Food Image"></td>
-                                                    <td><b>{{ item.fooditem }}</b></td>
+                                                    <td><img src="{{ item.fooditem.image.url }}" width="60" alt="Food Image"></td>
+                                                    <td><b style="line-height:20px;">{{ item.fooditem }}</b></td>
                                                     <td>{{ item.quantity }}</td>
                                                     <td>€{{ item.fooditem.price }}</td>
                                                 </tr>
