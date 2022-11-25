@@ -37,6 +37,8 @@ function onPlaceChanged() {
             // when chosen the address the lat and lng will be picked and assigned to their fields
             $('#id_latitude').val(latitude);
             $('#id_longitude').val(longitude);
+
+            $('#id_address').val(address);
         }
     });
 

@@ -24,9 +24,9 @@
                                             <figure>
                                                 <a href="#">
                                                     {% if vendor.user_profile.profile_picture %}
-                                                    <img src="{{ vendor.user_profile.profile_picture.url }}" class="img-list wp-post-image" alt="">
+                                                    <img src="{{ vendor.user_profile.profile_picture.url }}" class="img-list wp-post-image" alt="Restaurant Profile Image">
                                                     {% else %}
-                                                    <img src="{% static 'images/default-profile.png' %}" class="img-list wp-post-image" alt="">
+                                                    <img src="{% static 'images/default-profile.png' %}" class="img-list wp-post-image" alt="Default Restaurant Profile Image">
                                                     {% endif %}
                                                 </a>
                                             </figure>
@@ -41,9 +41,9 @@
                                                 </h5>
                                             </div>
                                             {% if vendor.user_profile.address %}
-                                            <span><small class="text-muted">{{ vendor.user_profile.address }}</small></span> {% endif %} {% if source_location %}
+                                            <span><small class="text-muted d-block mb-3">{{ vendor.user_profile.address }}</small></span> {% endif %} {% if source_location %}
                                             <br>
-                                            <span><small><b>{{vendor.kms}}</b>km away from your {{source_location}}</small></span>
+                                            <span><small><b>{{vendor.kms}}</b>km away from your location {{source_location}}</small></span>
                                         </div>
                                         {% endif %}
                                         <div class="list-option">

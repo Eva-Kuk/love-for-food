@@ -52,25 +52,6 @@
     min-height: 50vh;
 }
 
-
-/*
-.main-header .login-option a.get-start-btn {
-    background: #FF8200 !important;
-}
-
-
-
-.btn-outline-danger {
-    color: #FF8200;
-    border-color: #FF8200;
-}
-
-.btn-outline-danger:hover {
-    color: #fff;
-    background-color: #FF8200;
-    border-color: #FF8200;
-}*/
-
 .footer-widget .widget-newsletter .fieldset form .field-holder.btn-holder input[type="submit"] {
     border: #009A44 !important;
     background: #009A44 !important;
