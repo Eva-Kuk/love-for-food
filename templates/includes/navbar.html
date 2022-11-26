@@ -1,6 +1,6 @@
 {% load static %}
 <!--Main Wrapper-->
-<div class="wrapper">	
+<div class="wrapper">
     <!-- Header Start -->
     <header id="header">
         <div class="main-header">
@@ -13,14 +13,14 @@
                                     <img src="{% static 'logo/loveForFoodLogo.png' %}" alt="LoveForFoodLogo" width='190'>
                                 </a>
                             </figure>
-                        </div> 
+                        </div>
                         <div class="main-location ml-5">
                             <ul>
                                 <li class="location-has-children choose-location">
                                     <form action="#">
                                         <input type="text" value="" name="location" id="location" placeholder="Your current location" autocomplete="off">
                                         <span id="foodbakery_radius_location_open" class="foodbakery-radius-location" onclick="getLocation()"><i class="icon-target5"></i></span>
-                                    </form> 
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -35,15 +35,12 @@
                             </a>
                             {% endif %}
                             <!-- Navbar Top Left Buttons-->
-                            <a href="{% url 'marketplace' %}" class="btn btn-outline-danger text-uppercase font-weight-bold">Marketplace</a>
-                            {% if user.is_authenticated %}
+                            <a href="{% url 'marketplace' %}" class="btn btn-outline-danger text-uppercase font-weight-bold">Marketplace</a> {% if user.is_authenticated %}
                             <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" href="{% url 'myAccount' %}">My Account</a>
-                            <a class="cs-color cs-popup-joinus-btn login-popup text-danger" data-target="#sign-in" href="{% url 'logout' %}">Logout</a>
-                            {% else %}
-                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" href="{% url 'login' %}">Login</a> / 
-                                <span><a href="{% url 'registerUser' %}" class="cs-color cs-popup-joinus-btn login-popup ml-0">Register</a></span>
-                                <a href="{% url 'registerVendor' %}" class="get-start-btn"> Register Restaurant </a>
-                            {% endif %}
+                            <a class="cs-color cs-popup-joinus-btn login-popup text-danger" data-target="#sign-in" href="{% url 'logout' %}">Logout</a> {% else %}
+                            <a class="cs-color cs-popup-joinus-btn login-popup" data-target="#sign-in" href="{% url 'login' %}">Login</a> /
+                            <span><a href="{% url 'registerUser' %}" class="cs-color cs-popup-joinus-btn login-popup ml-0">Register</a></span>
+                            <a href="{% url 'registerVendor' %}" class="get-start-btn"> Register Restaurant </a> {% endif %}
                         </div>
                     </div>
                 </div>
@@ -56,46 +53,41 @@
 <script>
     var x = document.getElementById("location");
     current_location = sessionStorage.getItem("current_location")
-    if(current_location != ""){
-        x.value = current_location
+    if (current_location != "") {
+        x.value = current_location;
     }
 
     function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-    
-    function showPosition(position) {
-        //var lat = position.coords.latitude
-        //var lng = position.coords.longitude
-
-        var lat = '53.2920186'
-        var lng = '-6.2721895'
-
-        // x.value = lat +', '+lng
-       // console.log(position);
-      // x.innerHTML = "Latitude: " + position.coords.latitude +
-      // "<br>Longitude: " + position.coords.longitude;
-
-      //hit AJAX request to googlemaps api endpoint and get the location data using those lat and lng
-      var GOOGLE_API_KEY = "{{ GOOGLE_API_KEY }}"
-      var url ="https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"+&key="+GOOGLE_API_KEY
-        // console.log(url);
-    
-     $.ajax({
-        url:url,
-        type: "GET",
-        success: function(response){
-            //console.log(response)
-            var current_location = response.results[0].formatted_address
-            x.value = current_location
-            //console.log(location)
-            sessionStorage.setItem("current_location", current_location)
-            window.location = '?lat='+lat+'&lng='+lng
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
         }
-      })
     }
-    </script>
+
+    function showPosition(position) {
+        var lat = position.coords.latitude
+        var lng = position.coords.longitude
+
+        // x.value = lat + ', ' + lng
+        // console.log(position);
+        // x.innerHTML = "Latitude: " + position.coords.latitude +
+        // "<br>Longitude: " + position.coords.longitude;
+
+        //hit AJAX request to googlemaps api endpoint and get the location data using those lat and lng
+        var GOOGLE_API_KEY = "{{ GOOGLE_API_KEY }}"
+        var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "+&key=" + GOOGLE_API_KEY
+            // console.log(url);
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function(response) {
+                var current_location = response.results[0].formatted_address
+                x.value = current_location
+                sessionStorage.setItem("current_location", current_location)
+                window.location = '?lat=' + lat + '&lng=' + lng
+            }
+        })
+    }
+</script>

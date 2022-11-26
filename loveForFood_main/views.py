@@ -7,6 +7,7 @@ from django.contrib.gis.geos import GEOSGeometry
 from django.contrib.gis.measure import D #Distance "D" is a shortcut for "Distance"
 from django.contrib.gis.db.models.functions import Distance
 
+
 def get_or_set_current_location(request):
     if 'lat' in request.session:
         lat = request.session['lat']
@@ -20,6 +21,7 @@ def get_or_set_current_location(request):
         return lng, lat
     else:
         return None
+    
     
 def home(request):
     if get_or_set_current_location(request) is not None:

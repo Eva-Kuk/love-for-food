@@ -27,7 +27,7 @@
                                             <li class="select-location">
                                                 <div class="foodbakery-locations-fields-group foodbakery-focus-out">
                                                     <span class="foodbakery-search-location-icon"><i class="icon-location"></i></span>
-                                                    <input type="text" id="id_address" class="location-field-text filter" placeholder="All Locations">
+                                                    <input type="text" name="address" id="id_address" value="" class="location-field-text filter" placeholder="All Locations">
                                                     <input type="hidden" name="lat" value="" id="id_latitude">
                                                     <input type="hidden" name="lng" value="" id="id_longitude">
                                                 </div>
@@ -78,9 +78,9 @@
                             <li class="has-border">
                                 <figure>
                                     {% if vendor.user_profile.profile_picture %}
-                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{{ vendor.user_profile.profile_picture.url }}" class="attachment-full size-full wp-post-image" alt=""></a>
+                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{{ vendor.user_profile.profile_picture.url }}" class="attachment-full size-full wp-post-image" alt="Restaurant Profile Image"></a>
                                     {% else %}
-                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{% static 'images/default-profile.png' %}" class="attachment-full size-full wp-post-image" alt=""></a>
+                                    <a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{% static 'images/default-profile.png' %}" class="attachment-full size-full wp-post-image" alt="Default Restaurant Profile Image"></a>
                                     {% endif %}
                                 </figure>
                             </li>
@@ -134,7 +134,7 @@
                                         {% if vendor.user_profile.address %}
                                         <span>{{ vendor.user_profile.address }}</span> {% endif %} {% if vendor.kms %}
                                         <br>
-                                        <span><small><b>{{vendor.kms}} km</b> away from your location {{source_location}}</small></span> {% endif %}
+                                        <span><small><b>{{vendor.kms}} km</b> away from your current location {{source_location}}</small></span> {% endif %}
                                     </div>
                                 </div>
                             </li>
