@@ -4,7 +4,6 @@ function initAutoComplete() {
     autocomplete = new google.maps.places.Autocomplete(
             document.getElementById('id_address'), {
                 types: ['geocode', 'establishment'],
-                //default in this app is "IN" - add your country code
                 componentRestrictions: { 'country': ['ie'] },
             })
         // function to specify what should happen when the prediction is clicked
