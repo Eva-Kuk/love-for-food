@@ -1,0 +1,181 @@
+@keyframes show-toast {
+    0% {
+        bottom: -100%
+    }
+    20% {
+        bottom: 100px
+    }
+    80% {
+        bottom: 100px
+    }
+    100% {
+        bottom: -100%
+    }
+}
+
+.show-notification {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 8s;
+    z-index: 99;
+}
+
+.btn {
+    padding: 2px 1.75em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.main-search.fancy .field-holder input[type="text"] {
+    color: #000 !important;
+}
+
+.color-green-light {
+    background: #e8eaee !important;
+}
+
+.color-green {
+    background: #009A44 !important;
+}
+
+.color-orange {
+    background: #caced5 !important;
+}
+
+.main-search.fancy.bg-holder {
+    background: #191818 !important;
+}
+
+.min-height {
+    min-height: 50vh;
+}
+
+.footer-widget .widget-newsletter .fieldset form .field-holder.btn-holder input[type="submit"] {
+    border: #009A44 !important;
+    background: #009A44 !important;
+}
+
+.copy-right p a {
+    color: #009A44 !important;
+}
+
+.table>tbody>tr>td {
+    border: none !important;
+}
+
+#opening_hours select {
+    padding: 5px 10px;
+}
+
+.btn-success.add_hour {
+    padding: 7px 15px 7px 15px;
+}
+
+
+/* hide radio button */
+
+.payment-method [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.company-logo ul {
+    margin: 0 !important;
+}
+
+
+/* Image style*/
+
+.payment-method[type=radio]+img {
+    cursor: pointer;
+}
+
+
+/* Checked style */
+
+.payment-method [type=radio]:checked+img {
+    outline: 2px solid#ff0000;
+    padding: 5px;
+}
+
+.restaurants-images ul {
+    padding-top: 10px !important;
+    padding-bottom: 60px !important;
+}
+
+.footer-widget .widget-newsletter {
+    border-bottom: none !important;
+}
+
+#footer .widget-title {
+    margin-bottom: 30px !important;
+}
+
+.copy-right {
+    margin-bottom: 30px !important;
+}
+
+.copy-right p {
+    margin-bottom: 5px !important;
+}
+
+.button-style {
+    background: #009A44 !important;
+}
+
+table td,
+table th {
+    line-height: 1rem !important;
+}
+
+
+/* Media Queries for mobile devices */
+
+@media only screen and (max-width: 480px) {
+    a.get-start-btn {
+        display: block;
+        margin-top: 15px !important;
+        margin-left: 0 !important;
+    }
+    .search-bar {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        background-position: left !important;
+    }
+    .restaurants-images ul {
+        padding-top: 10px !important;
+        padding-bottom: 50px !important;
+    }
+    .company-logo ul li,
+    .company-logo ul li.has-border {
+        width: 49%;
+        padding: 20px;
+    }
+    .user-dashboard {
+        width: 100%;
+    }
+    .image-holder+.text-holder+.price-holder {
+        top: 10px;
+    }
+    .menu-itam-holder .quantity {
+        right: 0 !important;
+        margin-top: -50px !important;
+    }
+    .footer-widget .widget-newsletter {
+        margin-bottom: 10px !important;
+        padding-bottom: 0 !important;
+    }
+    .text-right-space {
+        width: 22% !important;
+    }
+    .table.opening_hours {
+        width: 100% !important;
+    }
+    .table td {
+        padding: 0.5rem !important;
+    }
+}
