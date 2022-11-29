@@ -1,9 +1,9 @@
 asgiref==3.4.1
-backports.zoneinfo==0.2.1
+backports.zoneinfo==0.2.1;python_version<"3.9"
 certifi==2022.6.15
 charset-normalizer==2.0.12
 Django==4.0.3
-inda==3.3
+inda==3.4
 Pillow==8.4.0
 psycopg2-binary
 python-decouple==3.5
